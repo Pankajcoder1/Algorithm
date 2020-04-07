@@ -5,7 +5,8 @@
   - Cpu scheduling
   - Sorting
   - Searching
+  - Greedy
   
   
   ---
-  > code written in c++.
+  > All code written in c++.

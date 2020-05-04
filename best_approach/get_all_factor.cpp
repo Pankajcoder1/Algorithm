@@ -2,12 +2,7 @@
 /*
 	written by pankaj kumar.
 */
-#include<algorithm>
-#include<string.h>
-#include<iostream>
-#include<vector>
-#include<cmath>
-#include<set>
+#include <bits/stdc++.h>
 using namespace std;
 typedef long long ll ;
 typedef vector<int> vi;
@@ -37,7 +32,7 @@ int main()
 	cout<<"List of all factor of "<<a<<"is : ";
 	for(int i=1;i<=sqrt(a);i++)
 	{
-		if(i%a==0)
+		if(a%i==0)
 		{
 			if(a/i==i)
 			{
@@ -47,7 +42,7 @@ int main()
 			else
 			{
 				count+=2;
-				cout<<a/i<<" "<<i;
+				cout<<a/i<<" "<<i<<" ";
 			}
 		}
 	}

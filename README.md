@@ -7,6 +7,7 @@
   - Searching
   - Greedy
   - Stack data structure
+  - Best appraoch of some typical Calculation/Algorithm
   
   
   ---

@@ -92,28 +92,28 @@ ll solve()
     vector<vector<pair<ll,ll>>> graph(vertex+1,vector<ll>());
     vector<ll> shortes_path(vertex+1,INF);
     for(ll i=1;i<=edges;i++){
-    	ll u,v,weight;
-    	cin>>u>>v>>weight;
-    	graph[u].pb({v,weight});
-    	graph[v].pb({u,weight});
+        ll u,v,weight;
+        cin>>u>>v>>weight;
+        graph[u].pb({v,weight});
+        graph[v].pb({u,weight});
     }
 
     // finding shortest distance from 1
     shortes_path[1]=0;
-	for(ll i=1;i<=vertex;i++){
-		ll min_vertex=1,mini=INF;
-		for(ll j=1;j<=vertex;j++){
-			if(shortes_path[j]<mini){
-				mini=shortes_path[j];
-				min_vertex=j;
-			}
-		}
+    for(ll i=1;i<=vertex;i++){
+        ll min_vertex=1,mini=INF;
+        for(ll j=1;j<=vertex;j++){
+            if(check[j]==false && shortes_path[j]<mini){
+                mini=shortes_path[j];
+                min_vertex=j;
+            }
+        }
 
-		check[min_vertex]=true;
-		for(auto edges:graph[min_vertex]){
-			shortes_path[edges]=min(shortes_path[edges.ff],shortes_path[min_vertex]+edges.ss);
-		}
-	}  
+        check[min_vertex]=true;
+        for(auto edges:graph[min_vertex]){
+            shortes_path[edges]=min(shortes_path[edges.ff],shortes_path[min_vertex]+edges.ss);
+        }
+    }  
     return 0;
 }
 
